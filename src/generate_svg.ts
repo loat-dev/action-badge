@@ -1,12 +1,21 @@
+import { type LabelOptions } from './label_options.ts';
+import { type StateOptions } from './state_options.ts';
 import { calculateTextWidth } from './text/calculate_text_width.ts';
 
+
+/**
+ * This function generates a SVG badge.
+ * 
+ * @param label The label options
+ * @param state The state options
+ */
 export function generateSVG(
-  label : string,
-  state : string
+  label : LabelOptions,
+  state : StateOptions
 ) : string {
 
-  const labelTextWidth = Math.floor(calculateTextWidth(label))
-  const stateTextWidth = Math.floor(calculateTextWidth(state))
+  const labelTextWidth = Math.floor(calculateTextWidth(label.text));
+  const stateTextWidth = Math.floor(calculateTextWidth(state.text));
 
   const labelPadding = 40;
   const statePadding = 10;
