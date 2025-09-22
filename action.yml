@@ -29,8 +29,8 @@ inputs:
     default: 'https://raw.githubusercontent.com/primer/octicons/refs/heads/main/icons/mark-github-16.svg'
 
 outputs:
-  custom-text-output:
-    description: 'This is the description for a custom output.'
+  svg-output:
+    description: 'The generated SVG.'
 
 runs:
   using: 'docker'

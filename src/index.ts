@@ -1,12 +1,13 @@
 import actionsCore from '@actions/core';
-import * as yaml from '@std/yaml'
 
-const customTextInput = actionsCore.getInput('custom-text-input');
-const customListInput = yaml.parse(actionsCore.getInput('custom-list-input'));
-const customKeyValueInput = yaml.parse(actionsCore.getInput('custom-key-value-input'));
+const statusTextInput = actionsCore.getInput('status-text');
+const statusColorInput = actionsCore.getInput('status-color');
+const lableTextInput = actionsCore.getInput('label-text');
+const iconPathInput = actionsCore.getInput('icon-path');
 
-console.log('custom-text-input:', customTextInput);
-console.log('custom-list-input:', customListInput);
-console.log('custom-key-value-input:', customKeyValueInput);
+console.log('status-text:', statusTextInput);
+console.log('status-color:', statusColorInput);
+console.log('label-text:', lableTextInput);
+console.log('icon-path:', iconPathInput);
 
 actionsCore.setOutput('custom-text-output', 'Test123');
