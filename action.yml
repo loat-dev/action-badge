@@ -4,30 +4,29 @@ name: 'Template Action'
 description: 'Project Template for Deno GitHub Actions.'
 author: 'Author'
 branding:
-  icon: 'award'
+  icon: 'tag'
   color: 'green'
 
 inputs:
-  custom-text-input:
-    description: 'This is the description for a custom input.'
+  status-text:
+    description: 'Text for the status.'
     required: false
-    default: 'DefaultValue'
+    default: 'Status'
 
-  custom-list-input:
-    description: 'This is the description for a custom input.'
+  status-color:
+    description: 'Color to use for the status.'
     required: false
-    default: |
-      - Item1
-      - Item2
-      - Item3
+    default: '#00FF00'
 
-  custom-key-value-input:
-    description: 'This is the description for a custom input.'
+  label-text:
+    description: 'Text for the front lable.'
     required: false
-    default: |
-      key1: value1
-      key2: value2
+    default: 'Label'
 
+  icon-path:
+    description: 'Path to the icon to use.'
+    required: false
+    default: 'https://raw.githubusercontent.com/primer/octicons/refs/heads/main/icons/mark-github-16.svg'
 
 outputs:
   custom-text-output:
