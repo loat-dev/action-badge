@@ -2,5 +2,6 @@
  * Options for the label
  */
 export interface LabelOptions {
-  text : string
+  text : string,
+  backgroundColor? : string
 }
