@@ -1,0 +1,38 @@
+name: 'Test Action'
+
+on:
+  push: {}
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  checks: write
+
+jobs:
+  test-action:
+    name: 'Test Action'
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: 'Setup Repository (${{ github.event.repository.name }})'
+        uses: actions/checkout@v4
+      
+      - name: 'Run Action'
+        id: test
+        uses: './'
+        with:
+          icon: 'tag'
+          label-text: 'Label-123'
+          state-text: 'State-123'
+
+      - name: 'Write summary'
+        run: |
+          echo '# Generated Badge' >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo 'Open badge in new tab:' >> $GITHUB_STEP_SUMMARY
+          echo -e '```url\ndata:image/svg+xml;utf8,${{ steps.test.outputs.svg-text-encoded }}\n```' >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo -e '```svg\n${{ steps.test.outputs.svg-text }}\n```' >> $GITHUB_STEP_SUMMARY
+
+

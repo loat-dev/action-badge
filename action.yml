@@ -1,0 +1,35 @@
+# https://docs.github.com/en/actions/sharing-automations/creating-actions/metadata-syntax-for-github-actions
+
+name: 'Template Action'
+description: 'Project Template for Deno GitHub Actions.'
+author: 'Author'
+branding:
+  icon: 'tag'
+  color: 'green'
+
+inputs:
+  icon:
+    description: 'Icon from GitHub Octicons.'
+    required: false
+    default: 'mark-github'
+
+  label-text:
+    description: 'Text to use for the label.'
+    required: false
+    default: 'Label'
+
+  state-text:
+    description: 'Text to use for the state.'
+    required: false
+    default: 'State'
+
+outputs:
+  svg-text:
+    description: 'The generated SVG.'
+
+  svg-text-encoded:
+    description: 'The generated SVG encoded as valid URI.'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
