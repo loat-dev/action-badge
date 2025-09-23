@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: 'Setup Repository (${{ github.event.repository.name }})'
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.ref }}
       
       - name: 'Test Action input'
         id: test
