@@ -8,6 +8,11 @@ branding:
   color: 'green'
 
 inputs:
+  label-text:
+    description: 'Text for the front lable.'
+    required: false
+    default: 'Label'
+
   status-text:
     description: 'Text for the status.'
     required: false
@@ -17,11 +22,6 @@ inputs:
     description: 'Color to use for the status.'
     required: false
     default: '#00FF00'
-
-  label-text:
-    description: 'Text for the front lable.'
-    required: false
-    default: 'Label'
 
   icon-path:
     description: 'Path to the icon to use.'
