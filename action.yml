@@ -29,7 +29,7 @@ inputs:
     default: 'https://raw.githubusercontent.com/primer/octicons/refs/heads/main/icons/mark-github-16.svg'
 
 outputs:
-  svg-output:
+  svg-text:
     description: 'The generated SVG.'
 
 runs:
