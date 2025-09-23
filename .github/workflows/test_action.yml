@@ -25,9 +25,8 @@ jobs:
         with:
           label-text: 'Label-123'
           status-text: 'Status-123'
-          
 
       - name: 'Test Action output'
         run: |
-          echo ${{ steps.test.outputs.svg-text }}
+          # echo ${{ steps.test.outputs.svg-text }}
 
