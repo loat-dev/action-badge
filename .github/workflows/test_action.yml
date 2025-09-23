@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 'Setup Repository (${{github.event.repository.name}})'
+      - name: 'Setup Repository (${{ github.event.repository.name }})'
         uses: actions/checkout@v4
       
       - name: 'Test Action input'
@@ -27,5 +27,5 @@ jobs:
 
       - name: 'Test Action output'
         run: |
-          echo "Output: ${{ steps.test.outputs.svg-text }}"
+          echo "${{ steps.test.outputs.svg-text }}"
 
