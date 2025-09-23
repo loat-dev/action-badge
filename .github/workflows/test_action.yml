@@ -28,7 +28,5 @@ jobs:
 
       - name: 'Test Action output'
         run: |
-          echo -e '${{ steps.test.outputs.svg-text }}' > badge.svg
-
-          echo '![badge.svg](badge.svg)' >> $GITHUB_STEP_SUMMARY
+          echo -e '${{ steps.test.outputs.svg-text }}' > $GITHUB_STEP_SUMMARY
 
