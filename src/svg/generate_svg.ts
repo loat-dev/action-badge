@@ -30,12 +30,10 @@ export function generateSVG(
 
   const stateBackgroundColors : typeof colors.GREY = colors.GREY
 
-  if (state.backgroundColor) {
-    const [start, end] = state.backgroundColor.split('-')
+  const [start, end] = state.backgroundColor.split('-')
 
-    stateBackgroundColors.start = start ?? colors.GREY.start;    
-    stateBackgroundColors.end = end ?? start ?? colors.GREY.end;
-  }
+  stateBackgroundColors.start = start ?? colors.GREY.start;    
+  stateBackgroundColors.end = end ?? start ?? colors.GREY.end;
 
   return `
 <svg xmlns="http://www.w3.org/2000/svg" width="${totalWidth}" height="20">

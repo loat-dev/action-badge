@@ -3,5 +3,5 @@
  */
 export interface StateOptions {
   text : string,
-  backgroundColor? : string
+  backgroundColor : string
 }
