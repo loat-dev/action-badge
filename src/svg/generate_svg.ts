@@ -25,7 +25,7 @@ export function generateSVG(
   const totalWidth = workflowWidth + stateWidth + 4;
              
   const workflowBackgroundPath = `M0,3 C0,1.3431 1.3552,0 3.02702703,0 L${workflowWidth},0 L${workflowWidth},20 L3.02702703,20 C1.3552,20 0,18.6569 0,17 L0,3 Z`;
-  const statePath =           `M0 0h${stateWidth + 0.47}C${stateWidth + 1.869} 0 ${stateWidth + 3} 1.343 ${stateWidth + 3} 3v14c0 1.657-1.132 3-2.53 3H0V0z`
+  const statePath = `M0 0h${stateWidth + 0.47}C${stateWidth + 1.869} 0 ${stateWidth + 3} 1.343 ${stateWidth + 3} 3v14c0 1.657-1.132 3-2.53 3H0V0z`
 
   return `
     <svg xmlns="http://www.w3.org/2000/svg" width="${totalWidth}" height="20">
