@@ -3,8 +3,8 @@ import { generateSVG } from './svg/generate_svg.ts';
 
 const lableTextInput = actionsCore.getInput('label-text');
 const iconPathInput = actionsCore.getInput('icon-path');
-const stateTextInput = actionsCore.getInput('status-text');
-const stateColorInput = actionsCore.getInput('status-color');
+const stateTextInput = actionsCore.getInput('state-text');
+const stateColorInput = actionsCore.getInput('state-color');
 
 console.log('state-text:', stateTextInput);
 console.log('state-color:', stateColorInput);
