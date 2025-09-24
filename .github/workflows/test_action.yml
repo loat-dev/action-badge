@@ -5,7 +5,7 @@ on:
   workflow_dispatch: {}
 
 permissions:
-  contents: read
+  contents: write
   checks: write
 
 jobs:
@@ -16,22 +16,36 @@ jobs:
     steps:
       - name: 'Setup Repository (${{ github.event.repository.name }})'
         uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.ref }}
       
-      - name: 'Test Action input'
+      - name: 'Run Action'
         id: test
         uses: './'
         with:
           label-text: 'Label-123'
           status-text: 'Status-123'
-
-      - name: 'Test Action output'
+      
+      - name: 'Write SVG'
         run: |
+          echo -e '${{ steps.test.outputs.svg-text }}' > badge.svg
+      
+      - name: 'Commit SVG to badge'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin badge || true
+          git checkout badge || git checkout --orphan badge
+          cp badge.svg badge.svg
+          git add badge.svg
+          git commit -m "Update badge" || echo "No changes"
+          git push origin badge
+
+      - name: 'Write summary'
+        run: |
+          RAW_URL="https://raw.githubusercontent.com/${{ github.repository }}/badge/diagram.svg"
           echo '# Generated Badge' >> $GITHUB_STEP_SUMMARY
           echo ' ' >> $GITHUB_STEP_SUMMARY
           echo ' ' >> $GITHUB_STEP_SUMMARY
-          echo '<img src="data:image/svg+xml;utf8,${{ steps.test.outputs.svg-text-encoded }}" />' >> $GITHUB_STEP_SUMMARY
+          echo '![badge.svg]($RAW_URL)' >> $GITHUB_STEP_SUMMARY
           echo ' ' >> $GITHUB_STEP_SUMMARY
           echo -e '```svg\n${{ steps.test.outputs.svg-text }}\n```' >> $GITHUB_STEP_SUMMARY
 
