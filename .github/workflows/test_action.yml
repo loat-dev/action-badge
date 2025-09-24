@@ -24,11 +24,7 @@ jobs:
           label-text: 'Label-123'
           status-text: 'Status-123'
       
-      - name: 'Write SVG'
-        run: |
-          echo -e '${{ steps.test.outputs.svg-text }}' > badge.svg
-      
-      - name: 'Commit SVG to badge'
+      - name: 'Remove old badge'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -36,9 +32,14 @@ jobs:
           git fetch origin badge || true
           git checkout badge || git checkout --orphan badge
 
-          git rm -rf . || true
-          mv ../badge.svg ./badge.svg
+          git rm -rf . --ignore-unmatch
 
+      - name: 'Write SVG'
+        run: |
+          echo -e '${{ steps.test.outputs.svg-text }}' > badge.svg
+
+      - name: 'Commit SVG'
+        run: |
           git add badge.svg
           git commit -m "Update badge" || echo "No changes"
           git push origin badge
