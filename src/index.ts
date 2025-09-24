@@ -13,4 +13,4 @@ console.log('icon-path:', iconPathInput);
 
 const svg = generateSVG({text: lableTextInput}, {text: statusTextInput});
 
-actionsCore.setOutput('svg-text', encodeURIComponent(svg))
+actionsCore.setOutput('svg-text', svg)
