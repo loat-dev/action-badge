@@ -1,6 +1,7 @@
 import { type LabelOptions } from './label_options.ts';
 import { type StateOptions } from './state_options.ts';
 import { calculateTextWidth } from '../text/calculate_text_width.ts';
+import { colors } from './colors.ts';
 
 
 /**
@@ -27,6 +28,15 @@ export function generateSVG(
   const workflowBackgroundPath = `M0,3 C0,1.3431 1.3552,0 3.02702703,0 L${workflowWidth},0 L${workflowWidth},20 L3.02702703,20 C1.3552,20 0,18.6569 0,17 L0,3 Z`;
   const statePath = `M0 0h${stateWidth + 0.47}C${stateWidth + 1.869} 0 ${stateWidth + 3} 1.343 ${stateWidth + 3} 3v14c0 1.657-1.132 3-2.53 3H0V0z`
 
+  const stateBackgroundColors : Partial<typeof colors.GREY> = {}
+
+  if (state.backgroundColor) {
+    const [start, end] = state.backgroundColor.split('-')
+
+    stateBackgroundColors.start = start ?? colors.GREY.start;    
+    stateBackgroundColors.end = end ?? start ?? colors.GREY.end;
+  }
+
   return `
 <svg xmlns="http://www.w3.org/2000/svg" width="${totalWidth}" height="20">
   <title>${label.text} - ${state.text}</title>
@@ -36,8 +46,8 @@ export function generateSVG(
       <stop stop-color="#24292E" offset="100%"/>
     </linearGradient>
     <linearGradient id="state-fill" x1="50%" y1="0%" x2="50%" y2="100%">
-      <stop stop-color="#D73A49" offset="0%"/>
-      <stop stop-color="#CB2431" offset="100%"/>
+      <stop stop-color="${stateBackgroundColors.start}" offset="0%"/>
+      <stop stop-color="${stateBackgroundColors.end}" offset="100%"/>
     </linearGradient>
   </defs>
   <g fill="none" fill-rule="evenodd">
