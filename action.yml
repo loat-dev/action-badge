@@ -13,13 +13,13 @@ inputs:
     required: false
     default: 'Label'
 
-  status-text:
-    description: 'Text for the status.'
+  state-text:
+    description: 'Text for the state.'
     required: false
     default: 'Status'
 
-  status-color:
-    description: 'Color to use for the status.'
+  state-color:
+    description: 'Color to use for the state.'
     required: false
     default: '#00FF00'
 
