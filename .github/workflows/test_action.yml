@@ -32,9 +32,13 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git fetch origin badge || true
           git checkout badge || git checkout --orphan badge
-          cp badge.svg badge.svg
+
+          rm -rf .
+          mv ../badge.svg ./badge.svg
+
           git add badge.svg
           git commit -m "Update badge" || echo "No changes"
           git push origin badge
