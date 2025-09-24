@@ -30,6 +30,8 @@ jobs:
           echo '# Generated Badge' >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
+          echo '<a href="data:image/svg+xml;utf8,${{ steps.test.outputs.svg-text-encoded }}">Open Badge ↗</a>'
+          echo "" >> $GITHUB_STEP_SUMMARY
           echo -e '```\ndata:image/svg+xml;utf8,${{ steps.test.outputs.svg-text-encoded }}\n```' >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo -e '```svg\n${{ steps.test.outputs.svg-text }}\n```' >> $GITHUB_STEP_SUMMARY
