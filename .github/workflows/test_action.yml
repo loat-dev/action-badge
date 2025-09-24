@@ -53,6 +53,8 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "![badge.svg]($RAW_URL)" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
+          echo '[Open Badge in new tab](${{ steps.test.outputs.svg-data-uri }})' >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
           echo -e '```svg\n${{ steps.test.outputs.svg-text }}\n```' >> $GITHUB_STEP_SUMMARY
 
 
