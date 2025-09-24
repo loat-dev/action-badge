@@ -36,7 +36,7 @@ jobs:
           git fetch origin badge || true
           git checkout badge || git checkout --orphan badge
 
-          rm -rf .
+          git rm -rf . || true
           mv ../badge.svg ./badge.svg
 
           git add badge.svg
