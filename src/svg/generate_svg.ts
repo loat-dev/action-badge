@@ -17,14 +17,14 @@ export function generateSVG(
   const labelTextWidth = Math.floor(calculateTextWidth(label.text));
   const stateTextWidth = Math.floor(calculateTextWidth(state.text));
 
-  const labelPadding = 40;
+  const labelPadding = 27;
   const statePadding = 10;
 
   const workflowWidth = labelTextWidth + labelPadding;
   const stateWidth = stateTextWidth + statePadding;
   const totalWidth = workflowWidth + stateWidth;
-
-  const workflowBackgroundPath = `M0,3 C0,1.3431 1.3552,0 3,0 H${workflowWidth} V20 H3 C1.3552,20 0,18.6569 0,17 V3 Z`;
+             
+  const workflowBackgroundPath = `M0,3 C0,1.3431 1.3552,0 3.02702703,0 L${workflowWidth},0 L${workflowWidth},20 L3.02702703,20 C1.3552,20 0,18.6569 0,17 L0,3 Z`;
   const stateBackgroundPath = `M0 0 H${stateWidth - 2.53} C${stateWidth - 1.132} 0 ${stateWidth} 1.343 ${stateWidth} 3 v14 c0 1.657-1.132 3-2.53 3 H0 V0 z`;
 
   return `
@@ -50,7 +50,7 @@ export function generateSVG(
             <tspan x="22.1981982" y="14">${label.text}</tspan>
           </text>
         </g>
-        <g transform="translate(118)" font-family="'DejaVu Sans',Verdana,Geneva,sans-serif" font-size="11px">
+        <g transform="translate(${workflowWidth})" font-family="'DejaVu Sans',Verdana,Geneva,sans-serif" font-size="11px">
           <path id="state_background" d="${stateBackgroundPath}" fill="url(#state-fill)" fill-rule="nonzero"/>
           <text fill="#010101" fill-opacity=".3" aria-hidden="true">
             <tspan x="5" y="15">${state.text}</tspan>
