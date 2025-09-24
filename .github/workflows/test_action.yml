@@ -23,6 +23,7 @@ jobs:
         with:
           label-text: 'Label-123'
           state-text: 'State-123'
+          state-color: '#dcbdfb-#af96c7'
       
       - name: 'Remove old badge'
         run: |
