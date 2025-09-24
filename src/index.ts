@@ -6,9 +6,9 @@ const iconPathInput = actionsCore.getInput('icon-path');
 const stateTextInput = actionsCore.getInput('state-text');
 const stateColorInput = actionsCore.getInput('state-color');
 
+console.log('label-text:', lableTextInput);
 console.log('state-text:', stateTextInput);
 console.log('state-color:', stateColorInput);
-console.log('label-text:', lableTextInput);
 console.log('icon-path:', iconPathInput);
 
 const svg = generateSVG({text: lableTextInput}, {text: stateTextInput, backgroundColor: stateColorInput});
