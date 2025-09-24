@@ -32,7 +32,6 @@ outputs:
   svg-text:
     description: 'The generated SVG.'
 
-outputs:
   svg-text-encoded:
     description: 'The generated SVG encoded as valid URI.'
 
