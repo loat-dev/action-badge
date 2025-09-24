@@ -17,17 +17,16 @@ export function generateSVG(
   const labelTextWidth = Math.floor(calculateTextWidth(label.text));
   const stateTextWidth = Math.floor(calculateTextWidth(state.text));
 
-  const labelPadding = 27;
-  const statePadding = 10;
+  const labelPadding = 28;
+  const statePadding = 7;
 
   const workflowWidth = labelTextWidth + labelPadding;
   const stateWidth = stateTextWidth + statePadding;
-  const totalWidth = workflowWidth + stateWidth;
+  const totalWidth = workflowWidth + stateWidth + 4;
              
   const workflowBackgroundPath = `M0,3 C0,1.3431 1.3552,0 3.02702703,0 L${workflowWidth},0 L${workflowWidth},20 L3.02702703,20 C1.3552,20 0,18.6569 0,17 L0,3 Z`;
-  const stateBackgroundPath = `M0 0 H${stateWidth - 2.53} C${stateWidth - 1.132} 0 ${stateWidth} 1.343 ${stateWidth} 3 v14 c0 1.657-1.132 3-2.53 3 H0 V0 z`;
   const statePath =           `M0 0h${stateWidth + 0.47}C${stateWidth + 1.869} 0 ${stateWidth + 3} 1.343 ${stateWidth + 3} 3v14c0 1.657-1.132 3-2.53 3H0V0z`
-                            // M0 0h40.47               C41.869                0 43                1.343 43                3v14c0 1.657-1.132 3-2.53 3H0V0z
+
   return `
     <svg xmlns="http://www.w3.org/2000/svg" width="${totalWidth}" height="20">
       <title>${label.text} - ${state.text}</title>
