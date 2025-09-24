@@ -46,7 +46,7 @@ jobs:
 
       - name: 'Write summary'
         run: |
-          RAW_URL="https://raw.githubusercontent.com/${{ github.repository }}/badge/diagram.svg"
+          RAW_URL="https://raw.githubusercontent.com/${{ github.repository }}/badge/badge.svg"
           echo '# Generated Badge' >> $GITHUB_STEP_SUMMARY
           echo ' ' >> $GITHUB_STEP_SUMMARY
           echo ' ' >> $GITHUB_STEP_SUMMARY
