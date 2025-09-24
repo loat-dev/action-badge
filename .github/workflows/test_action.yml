@@ -22,7 +22,7 @@ jobs:
         uses: './'
         with:
           label-text: 'Label-123'
-          status-text: 'Status-123'
+          state-text: 'Status-123'
       
       - name: 'Remove old badge'
         run: |
