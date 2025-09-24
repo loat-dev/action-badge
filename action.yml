@@ -16,12 +16,11 @@ inputs:
   state-text:
     description: 'Text for the state.'
     required: false
-    default: 'Status'
+    default: 'State'
 
   state-color:
     description: 'Color to use for the state.'
     required: false
-    default: '#00FF00'
 
   icon-path:
     description: 'Path to the icon to use.'
