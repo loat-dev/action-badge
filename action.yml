@@ -9,17 +9,17 @@ branding:
 
 inputs:
   icon:
-    description: 'Octicon to use.'
+    description: 'Icon from GitHub Octicons.'
     required: false
     default: 'mark-github'
 
   label-text:
-    description: 'Text for the lable.'
+    description: 'Text to use for the label.'
     required: false
     default: 'Label'
 
   state-text:
-    description: 'Text for the state.'
+    description: 'Text to use for the state.'
     required: false
     default: 'State'
 
