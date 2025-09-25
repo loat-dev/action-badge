@@ -13,7 +13,7 @@ import { colors } from './colors.ts';
 export function generateSVG(
   label : LabelOptions,
   state : StateOptions,
-  svgContent : string
+  iconUrl : string
 ) : string {
 
   const labelTextWidth = Math.floor(calculateTextWidth(label.text));
@@ -68,7 +68,9 @@ export function generateSVG(
         <tspan x="5" y="14">${state.text}</tspan>
       </text>
     </g>
-    ${svgContent}
+    <g id="icon" transform="translate(4,3)">
+      <image href="${iconUrl}" width="14" height="14"/>
+    </g>
   </g>
 </svg>
   `.trim()
