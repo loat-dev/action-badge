@@ -32,8 +32,4 @@ outputs:
 
 runs:
   using: 'docker'
-  image: 'docker://denoland/deno:latest'
-  entrypoint: 'deno'
-  args:
-    - 'task'
-    - 'index'
+  image: 'dockerfile'
