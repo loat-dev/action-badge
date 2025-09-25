@@ -48,6 +48,9 @@ export function generateSVG(
       <stop stop-color="${stateBackgroundColors.start}" offset="0%"/>
       <stop stop-color="${stateBackgroundColors.end}" offset="100%"/>
     </linearGradient>
+    <mask id="icon-mask">
+      <image href="${iconUrl}" width="14" height="14" fill="white"/>
+    </mask>
   </defs>
   <g fill="none" fill-rule="evenodd">
     <g font-family="'DejaVu Sans',Verdana,Geneva,sans-serif" font-size="11px">
@@ -69,7 +72,7 @@ export function generateSVG(
       </text>
     </g>
     <g transform="translate(4,3)" fill="#959DA5">
-      <image href="${iconUrl}" width="14" height="14"/>
+      <rect x="3" y="3" width="14" height="14" mask="url(#icon-mask)"/>
     </g>
   </g>
 </svg>
