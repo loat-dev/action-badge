@@ -22,7 +22,8 @@ console.log('icon-path:', iconPathInput);
 
 const svg = generateSVG(
   {text: lableTextInput, backgroundColor: labelBackgroundColorInput},
-  {text: stateTextInput, backgroundColor: stateBackgroundColorInput}
+  {text: stateTextInput, backgroundColor: stateBackgroundColorInput},
+  await fetch(iconPathInput).then(response => response.text())
 );
 
 actionsCore.setOutput('svg-text', svg)
