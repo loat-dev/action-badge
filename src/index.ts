@@ -2,31 +2,19 @@ import actionsCore from '@actions/core';
 import octIcons from '@primer/octicons';
 import { generateSVG } from './svg/generate_svg.ts';
 
-const lableTextInput = actionsCore.getInput('label-text');
-const lableTextColorInput = actionsCore.getInput('label-text-color');
-const labelBackgroundColorInput = actionsCore.getInput('state-background-color');
-
-const stateTextInput = actionsCore.getInput('state-text');
-const stateTextColorInput = actionsCore.getInput('state-text-color');
-const stateBackgroundColorInput = actionsCore.getInput('state-background-color');
-
 const iconInput = actionsCore.getInput('icon');
-const iconColorInput = actionsCore.getInput('icon-color');
+const lableTextInput = actionsCore.getInput('label-text');
+const stateTextInput = actionsCore.getInput('state-text');
 
-console.log('label-text:', lableTextInput);
-console.log('label-text-color:', lableTextColorInput);
-console.log('label-background-color:', labelBackgroundColorInput);
-
-console.log('state-text:', stateTextInput);
-console.log('state-text-color:', stateTextColorInput);
-console.log('state-background-color:', stateBackgroundColorInput);
 console.log('icon:', iconInput);
-console.log('icon-color:', iconColorInput);
+console.log('label-text:', lableTextInput);
+console.log('state-text:', stateTextInput);
+
 
 const svg = generateSVG(
-  {text: lableTextInput, backgroundColor: labelBackgroundColorInput},
-  {text: stateTextInput, backgroundColor: stateBackgroundColorInput},
-  {path: octIcons[iconInput as keyof typeof octIcons]?.heights?.['16']?.path, color: iconColorInput}
+  octIcons[iconInput as keyof typeof octIcons]?.heights?.['16']?.path,
+  lableTextInput,
+  stateTextInput,
 );
 
 actionsCore.setOutput('svg-text', svg)

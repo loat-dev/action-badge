@@ -21,10 +21,9 @@ jobs:
         id: test
         uses: './'
         with:
+          icon: 'tag'
           label-text: 'Label-123'
           state-text: 'State-123'
-          state-background-color: '#dcbdfb-#af96c7'
-          icon: 'tag'
 
       - name: 'Write summary'
         run: |

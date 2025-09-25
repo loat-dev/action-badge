@@ -8,45 +8,20 @@ branding:
   color: 'green'
 
 inputs:
-  label-text:
-    description: 'Text for the lable.'
-    required: false
-    default: 'Label'
-
-  label-text-color:
-    description: 'Color for the lable text.'
-    required: false
-    default: '#FFFFFF'
-
-  label-background-color:
-    description: 'Color for the state.'
-    required: false
-    default: '#444D56-#24292E'
-
-  state-text:
-    description: 'Text for the state.'
-    required: false
-    default: 'State'
-
-  state-text-color:
-    description: 'Color for the state text.'
-    required: false
-    default: '#FFFFFF'
-
-  state-background-color:
-    description: 'Color for the state.'
-    required: false
-    default: '#959DA5-#6A737D'
-
   icon:
     description: 'Octicon to use.'
     required: false
     default: 'mark-github'
 
-  icon-color:
-    description: 'Color for the Octicon.'
+  label-text:
+    description: 'Text for the lable.'
     required: false
-    default: '#959DA5'
+    default: 'Label'
+
+  state-text:
+    description: 'Text for the state.'
+    required: false
+    default: 'State'
 
 outputs:
   svg-text:
