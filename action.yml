@@ -43,6 +43,11 @@ inputs:
     required: false
     default: 'mark-github'
 
+  icon-color:
+    description: 'Color for the Octicon.'
+    required: false
+    default: '#959DA5'
+
 outputs:
   svg-text:
     description: 'The generated SVG.'
