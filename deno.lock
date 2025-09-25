@@ -46,6 +46,14 @@
       ]
     }
   },
+  "redirects": {
+    "https://esm.sh/@primer/octicons@^19": "https://esm.sh/@primer/octicons@19.18.0",
+    "https://esm.sh/@types/primer__octicons@~19.11.1/index.d.ts": "https://esm.sh/@types/primer__octicons@19.11.1/index.d.ts"
+  },
+  "remote": {
+    "https://esm.sh/@primer/octicons@19.18.0": "3736626b742d7632c906af0c2011bc14549b0d06df7508825d85cf334ecf7674",
+    "https://esm.sh/@primer/octicons@19.18.0/denonext/octicons.mjs": "4c6feed90276b7c78b7353ad14d778448c827bcad9be8bc905016a0c7bef27fb"
+  },
   "workspace": {
     "dependencies": [
       "jsr:@std/yaml@^1.0.9",

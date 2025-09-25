@@ -38,10 +38,10 @@ inputs:
     required: false
     default: '#959DA5-#6A737D'
 
-  icon-path:
-    description: 'Path to the icon to use.'
+  icon:
+    description: 'Octicon to use.'
     required: false
-    default: 'https://raw.githubusercontent.com/primer/octicons/refs/heads/main/icons/mark-github-16.svg'
+    default: 'mark-github'
 
 outputs:
   svg-text:

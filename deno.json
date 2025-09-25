@@ -48,6 +48,7 @@
   },
   "imports": {
     "@actions/core": "npm:@actions/core@^1.11.1",
-    "@std/yaml": "jsr:@std/yaml@^1.0.9"
+    "@std/yaml": "jsr:@std/yaml@^1.0.9",
+    "@primer/octicons": "https://esm.sh/@primer/octicons@^19"
   }
 }
