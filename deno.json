@@ -35,7 +35,8 @@
         "guard-for-in",
         "no-eval",
         "no-sparse-arrays",
-        "prefer-ascii"
+        "prefer-ascii",
+        "verbatim-module-syntax"
       ],
       "exclude": [
         "no-inferrable-types"

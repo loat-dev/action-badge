@@ -1,6 +1,6 @@
-import { type LabelOptions } from './label_options.ts';
-import { type StateOptions } from './state_options.ts';
-import { type IconOptions } from './icon_options.ts';
+import type { LabelOptions } from './label_options.ts';
+import type { StateOptions } from './state_options.ts';
+import type { IconOptions } from './icon_options.ts';
 import { calculateTextWidth } from '../text/calculate_text_width.ts';
 import { colors } from './colors.ts';
 
