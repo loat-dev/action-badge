@@ -2,7 +2,7 @@ FROM denoland/deno:latest
 
 WORKDIR /app
 
-COPY ./* ./
+COPY . ./
 
 RUN deno cache src/index.ts
 
