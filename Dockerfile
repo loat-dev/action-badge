@@ -4,8 +4,7 @@ WORKDIR /app
 
 COPY . ./
 
-RUN apt install tree
-RUN tree .
+RUN apt-get update && apt-get install tree && tree .
 
 RUN deno cache src/index.ts
 
