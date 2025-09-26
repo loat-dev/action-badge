@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . ./
 
-RUN ls -al
+RUN tree .
 
 RUN deno cache src/index.ts
 
